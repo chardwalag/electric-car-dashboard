@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Battery Status</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Battery Level: {{ batteryLevel }}%</p>
+    <p>Status: {{ getBatteryStatus() }}</p>
+    <mat-progress-bar mode="determinate" [value]="batteryLevel"></mat-progress-bar>
+  </mat-card-content>
+</mat-card>

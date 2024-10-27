@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Analytics Overview</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let metric of metrics">
+        {{ metric.name }}: {{ metric.value }}
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

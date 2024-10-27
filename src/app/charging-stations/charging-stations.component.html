@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Charging Stations</mat-card-title>
+  </mat-card-header>
+  <mat-list>
+    <mat-list-item *ngFor="let station of stations">
+      {{ station.name }} - 
+      <span [ngClass]="{'available': station.available, 'unavailable': !station.available}">
+        {{ station.available ? 'Available' : 'Unavailable' }}
+      </span>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
