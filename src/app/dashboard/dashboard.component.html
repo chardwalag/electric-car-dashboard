@@ -3,8 +3,8 @@
 </mat-toolbar>
 
 <div class="dashboard-container">
-  <app-battery-status></app-battery-status>
-  <app-charging-stations></app-charging-stations>
+  <app-battery-status [batteryLevel]="batteryStatus.batteryLevel"></app-battery-status>
+  <app-charging-stations [stations]="chargingStations.stations"></app-charging-stations>
   <app-user-controls></app-user-controls>
-  <app-analytics></app-analytics>
+  <app-analytics [metrics]="analytics.metrics"></app-analytics>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
@@ -10,7 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   imports: [MatCardModule, MatProgressBarModule],
 })
 export class BatteryStatusComponent {
-  batteryLevel = 75;
+  @Input() batteryLevel!: number;
 
   getBatteryStatus() {
     return this.batteryLevel > 20 ? 'Good' : 'Low';
