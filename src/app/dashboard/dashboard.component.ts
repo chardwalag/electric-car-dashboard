@@ -4,8 +4,8 @@ import { BatteryStatusComponent } from '../battery-status/battery-status.compone
 import { ChargingStationsComponent } from '../charging-stations/charging-stations.component'
 import { UserControlsComponent } from '../user-controls/user-controls.component'
 import { AnalyticsComponent } from '../analytics/analytics.component'
-import { DASHBOARD_DATA } from '../dummy-data'
 import { Analytics, BatteryStatus, ChargingStations } from '../types'
+import { DashboardService } from './dashboard.service'
 
 
 @Component({
@@ -20,8 +20,9 @@ export class DashboardComponent {
   batteryStatus: BatteryStatus;
   chargingStations: ChargingStations;
 
-  constructor() {
-    const { analytics, batteryStatus, chargingStations } = DASHBOARD_DATA;
+  constructor( private dashboardService: DashboardService ) {
+    this.dashboardService = dashboardService
+    const { analytics, batteryStatus, chargingStations } = this.dashboardService.getDashboardData();
     this.analytics = analytics
     this.batteryStatus = batteryStatus
     this.chargingStations = chargingStations
